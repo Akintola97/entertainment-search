@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../components/Header'
 import SimpleBottomNavigation from '../components/Nav'
+import SearchMain from '../components/SearchMain'
 
 
 
@@ -9,7 +10,7 @@ function Search() {
     <div>
       <Header />
       <SimpleBottomNavigation />
-      
+      <SearchMain />
      
     </div>
   )
