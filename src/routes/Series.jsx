@@ -1,8 +1,16 @@
 import React from 'react'
+import Header from '../components/Header'
+import SimpleBottomNavigation from '../components/Nav'
+
+
+
 
 function Series() {
   return (
-    <div>Series</div>
+    <div>
+      <Header />
+      <SimpleBottomNavigation />
+    </div>
   )
 }
 

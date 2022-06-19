@@ -10,7 +10,6 @@ import SearchIcon from '@mui/icons-material/Search';
 
 export default function LabelBottomNavigation() {
   const [value, setValue] = React.useState('recents');
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
