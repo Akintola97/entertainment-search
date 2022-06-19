@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../components/Header'
+import MoviesMain from '../components/MoviesMain'
 import SimpleBottomNavigation from '../components/Nav'
 
 
@@ -9,7 +10,7 @@ function Movies() {
     <div>
       <Header />
       <SimpleBottomNavigation />
-
+      <MoviesMain />
 
     </div>
 

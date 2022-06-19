@@ -11,8 +11,9 @@ import SearchIcon from '@mui/icons-material/Search';
 export default function LabelBottomNavigation() {
   const [value, setValue] = React.useState('recents');
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    setValue(newValue); 
   };
+
 
   return (
     <BottomNavigation sx={{ width:'100%', position:'fixed', bottom:'0', zIndex:100, backgroundColor:'#2d313a'}} value={value} onChange={handleChange}>
