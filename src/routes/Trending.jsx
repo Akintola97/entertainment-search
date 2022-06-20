@@ -1,8 +1,8 @@
 import React from 'react'
 import Header from '../components/Header'
 import SimpleBottomNavigation from '../components/Nav'
-import Home from '../components/Home'
-import Trending_Main from '../components/Trending_Main'
+import TrendingMain from '../components/TrendingMain'
+import SingleContent from '../components/SingleContent'
 
 
 
@@ -12,9 +12,13 @@ function Trending() {
     <div>
       <Header />
       <SimpleBottomNavigation />
-      <Trending_Main/>
+      <TrendingMain/>
+      <SingleContent/>
+     
     </div>
+    
   )
+
 }
 
 export default Trending
