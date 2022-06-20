@@ -1,7 +1,7 @@
 import * as React from 'react';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-
+import { Link } from 'react-router-dom'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TheatersIcon from '@mui/icons-material/Theaters';
 import TvIcon from '@mui/icons-material/Tv';
@@ -22,24 +22,34 @@ export default function LabelBottomNavigation() {
         label="Trending"
         value="Trending"
         icon={<TrendingUpIcon />}
+        to = "/trending"
+        component ={Link}
+
       />
       <BottomNavigationAction
       style={{color:'white'}}
         label="Movies"
         value="Movies"
         icon={<TheatersIcon />}
+        to = "/Movies"
+        component ={Link}
       />
       <BottomNavigationAction
         style={{color:'white'}}
         label="Series"
         value="Series"
         icon={<TvIcon />}
+        to = "/Series"
+        component ={Link}
       />
       <BottomNavigationAction 
       style={{color:'white'}}
       label="Search"  
       value="Search"  
-      icon={<SearchIcon />} />
+      icon={<SearchIcon />} 
+      to = "/Search"
+        component ={Link}
+      />
     </BottomNavigation>
   );
 }
