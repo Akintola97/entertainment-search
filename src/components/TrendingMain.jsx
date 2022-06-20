@@ -1,39 +1,59 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
 import {useState} from 'react';
+import CustomPagination from './CustomPagination';
 import SingleContent from './SingleContent';
 import './TrendingMain.css'
 
 
-function Trending_Main() {
+
+function TrendingMain() {
+  const [page, setPage] = useState(1)
   const [content, setContent] = useState([]);
 
 
   const fetchTrending = async () => {
     const { data } =await axios.get(`
-    https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_KEY}`
+    https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_KEY}&page=${page}`
     );
 
-  console.log(data);
+
 
   setContent(data.results);
 
   };
 
   useEffect(() => {
+    
     fetchTrending();
-  }, []);
+    // eslint-disable-next-line
+  }, [page]);
 
   return (
     <>
-    <div className='trending'>Trending Main</div>
-    <div className='trendingContent'>
+    <div className='trending text-center'>
+    <div className='trendingContent flex flex-wrap justify-around pt-5 w-full'>
       {content && content.map((c) =>
-        <SingleContent key={c.id}/>
+        <SingleContent 
+        key={c.id} 
+        id={c.id} 
+        poster={c.poster_path} 
+        title={c.title || c.name} 
+        date={c.first_air_date || c.release_date}
+        media_type={c.media_type}
+        vote_average={c.vote_average}
+        />
+       
       )}
+       
     </div>
+  
+    <CustomPagination setPage={setPage}/>  
+    
+    </div>
+   
     </>
   )
 }
 
-export default Trending_Main
+export default TrendingMain

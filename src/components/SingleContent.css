@@ -1,0 +1,14 @@
+.mediaContent{
+   
+    display: flex;
+    flex-direction: column;
+    width:25vmin;
+    padding: 10px;
+    
+}
+
+@media (max-width:1200px){
+   .mediaContent{
+    width:25vmin;
+   } 
+}

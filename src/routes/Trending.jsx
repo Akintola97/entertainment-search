@@ -7,6 +7,7 @@ import SingleContent from '../components/SingleContent'
 
 
 
+
 function Trending() {
   return (
     <div>

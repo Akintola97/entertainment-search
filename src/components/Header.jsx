@@ -2,8 +2,10 @@
 import './Header.css'
 function header() {
   return (
-    <header className='title'>Entertainment Center 🍿</header>
     
+    <div onClick={() => window.scroll(0,0)}  className='title'>Entertainment Center 🍿</div>
+
+
   )
 }
 
