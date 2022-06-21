@@ -8,6 +8,7 @@ import SingleContent from '../components/SingleContent'
 
 
 
+
 function Trending() {
   return (
     <div>
@@ -15,7 +16,7 @@ function Trending() {
       <SimpleBottomNavigation />
       <TrendingMain/>
       <SingleContent/>
-     
+    
     </div>
     
   )

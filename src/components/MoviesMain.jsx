@@ -3,13 +3,15 @@ import './MoviesMain.css'
 import axios from 'axios';
 import CustomPagination from './CustomPagination';
 import SingleContent from './SingleContent';
-
+import Genres from './Genres';
 
 const MoviesMain = () => {
 
   const [page, setPage] = useState(1)
   const [content, setContent] = useState([])
-  const [numOfPages, setNumOfPages] = useState();
+  const [numOfPages, setNumOfPages] = useState()
+  const [selectedGenres, setSelectedGenres] = useState([])
+  const [genres, setGenres] = useState([])
 
   const fetchMovies = async () => {
     const { data } = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}`
@@ -29,9 +31,21 @@ useEffect(() => {
 
   return (
     <>
-    <div className='movies text-center'>
+    <div className='movies text-center'> Movies
+    <Genres
+    type = 'movie' 
+    selectedGenres = {selectedGenres} 
+    setSelectedGenres={setSelectedGenres} 
+    genres = {genres}
+    setGenres={setGenres}
+    setPage={setPage}
+    
 
+    
+    />
+    
     <div className='moviesContent flex flex-wrap justify-around pt-5  w-full'>
+
      {content && content.map((c) =>
         <SingleContent 
         key={c.id} 
