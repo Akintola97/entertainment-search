@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import Chip from '@mui/material/Chip';
 
+
 const Genres = ({
     type,
     selectedGenres,
@@ -11,6 +12,21 @@ const Genres = ({
     setGenres,
     setPage,
 }) => {
+
+  const handleAdd=(genre) => {
+    setSelectedGenres([...selectedGenres, genre]);
+    setGenres(genres.filter((g)=>g.id!==genre.id));
+    setPage(1);
+  };
+  const handleRemove=(genre) => {
+    setSelectedGenres(
+      selectedGenres.filter((selected) => selected.id !== genre.id));
+    
+    
+    setGenres([...genres, genre]);
+    setPage(1);
+      
+  };
 
   const fetchGenres = async () => {
     const { data } = await axios.get(
@@ -26,7 +42,7 @@ const Genres = ({
         fetchGenres();
 
         return () => {
-          setGenres({});
+          setGenres([]);
         };
         // eslint-disable-next-line 
       }, []);
@@ -34,12 +50,18 @@ const Genres = ({
 
       return (
         <div>
-       {genres.map((genre) => (
-         <Chip label = {genre.name} />
+       {selectedGenres.map((genre) => (
+         <Chip label = {genre.name} key = {genre.id} color='secondary' size='small' clickable
+         onDelete ={() => handleRemove(genre)}
+         />
        ))}
-     
+      {genres.map((genre) => (
+         <Chip label = {genre.name} size='small' color='info' key = {genre.id} clickable
+         onClick ={() => handleAdd(genre)}
+         />
+      ))}
     </div>
-  )
+  );
 };
 
 export default Genres

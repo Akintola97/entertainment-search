@@ -31,7 +31,7 @@ useEffect(() => {
 
   return (
     <>
-    <div className='movies text-center'> Movies
+    <div className='movies text-center'> MOVIES
     <Genres
     type = 'movie' 
     selectedGenres = {selectedGenres} 
