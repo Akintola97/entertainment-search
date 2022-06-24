@@ -5,28 +5,21 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { makeStyles } from '@mui/material';
 
-const style = makeStyles((theme) => ({
-  modal:{
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '90%',
+  height:'80%',
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
-
-    display:'flex',
-    alignItems:'center',
-    justifyContent:'center',
-  },
-
-  paper:{
-    width:'90%',
-    height:'80%',
-    backgroundColor: theme.paletter.background.paper,
-    border:'2px solid #000',
-    boxShadow: theme.shadow[5],
-    padding:theme.spacing(2,4,3),
-  },
-}));
-
-export default function EntertainmentModal({children}) {
+export default function EntertainmentModal({children, media_type, id}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
