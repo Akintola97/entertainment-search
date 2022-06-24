@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Home from './components/Home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Movies from './routes/Movies'
 import Series from './routes/Series'
@@ -15,7 +14,7 @@ function App() {
     <BrowserRouter>
     <div className='app'>
       <Routes>
-        <Route path ='/' element={<Home />}/>
+        <Route path ='/' element={<Trending />}/>
         <Route path ='/Trending' element={<Trending/>}/>
         <Route path ='/movies' element={<Movies />}/>
         <Route path ='/series' element={<Series />}/>
