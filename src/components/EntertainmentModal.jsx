@@ -8,6 +8,15 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import axios from 'axios';
 import { img_500, unavailable, unavailableLandscape } from '../assets/config';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import Carousel from './Carousel'
+import './EntertainmentModal.css'
+
+
+
+
 
 const style = {
   position: 'absolute',
@@ -15,8 +24,9 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: '90%',
-  height:'80%',
-  bgcolor: 'background.paper',
+  height:'95%',
+  bgcolor: 'black',
+  color:'white',
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
@@ -75,30 +85,50 @@ export default function EntertainmentModal({children, media_type, id}) {
           <Box sx={style}>
            {content && (
            <div className='EntertainmentModal'>
-              <img className ='modalImg_portrait' src = {content.poster_path ? `${img_500}/${content.poster_path}`: unavailable} 
-              alt ={content.name || content.title} 
-              /> 
-              
-
               <img className = 'modalImg_landscape' alt = {content.name || content.title} src = {
                 content.backdrop_path ? `${img_500}/${content.backdrop_path}` : unavailableLandscape
               } />
+             
 
-              <div className='entertainmentModal_about'>
+              <div className='entertainmentModal_about pt-2'>
                 <span className = 'entertainmentModal_title'>
                   {content.name || content.title} (
                     {(
                       content.first_air_date ||
                       content.release_date ||
-                      '----- '
-                    )}
+                      "-----"
+                    ).substring(0,4)}
                   )
                 </span>
+                {content.tagline && (
+                  <i className = 'tagline flex'>{content.tagline}</i>
+                )}
+                <span className='EntertainmentModal_description pt-3 flex w-2/4'>
+                  {content.overview}
+
+                </span>
+                <div>
+
+                </div>
+                <div className='entBtn pt-1'>
+                <Button
+                  variant='outlined'
+                  color='info'
+                  startIcon={<YouTubeIcon />}
+                  target='_blank'
+                  size='small'
+                  href={`https://www.youtube.com/watch?v=${video}`}
+                >
+                  TRAILER
+                </Button>
+                </div>
+              
               </div>
 
 
-
+              
             </div>
+            
            )}
           </Box>
         </Fade>
