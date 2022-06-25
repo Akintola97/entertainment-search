@@ -18,9 +18,11 @@ const SearchMain = () => {
   const [searchText, setSearchText] = useState("");
   const [page, setPage] = useState(1);
   const [content, setContent] = useState([])
+  // eslint-disable-next-line
   const [numOfPages, setNumOfPages] = useState()
 
-  const fetchSearch = async () => {
+  const fetchSearch = async (event) => {
+    event.preventDefault();
     const {data} = await axios.get(`https://api.themoviedb.org/3/search/${type ? 'tv' : 'movie'}?api_key=${process.env.REACT_APP_KEY}&languages=en-US&query=${searchText}&page=${page}&include_adult=false`);
 
   
