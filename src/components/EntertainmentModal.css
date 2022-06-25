@@ -1,7 +1,16 @@
 .modalImg_landscape{
-    
+    height:auto;
+    width: auto;
 }
 
+@media(min-width:768px){
+
+
+.modalImg_landscape{
+    height:15vmin;
+    width: auto;
+}
+}
 
 .entertainmentModal_title{
     font-size: 2.5vmin;

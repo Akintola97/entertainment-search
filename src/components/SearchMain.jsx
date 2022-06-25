@@ -40,12 +40,15 @@ useEffect(()=> {
 
   return (
    <>
+   <form onSubmit={fetchSearch}>
     <div className='search justify-center text-center w-full'>
+      
       <TextField id="standard-basic" label="Search" variant="standard" 
       onChange={(e) => setSearchText(e.target.value)}
       />
+      
       <Button variant="text" onClick={fetchSearch} ><SearchIcon /></Button>
-
+      
 </div>
 <div className='flex justify-center w-full'>
 <Tabs value ={type} indicatorColor='secondary' textColor='primary' 
@@ -78,7 +81,7 @@ onChange={(event, newValue)=>{
     
     </div>
 
-
+    </form>
 </>
 
   )

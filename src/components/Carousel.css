@@ -1,0 +1,22 @@
+.carouselItem{
+    padding-top: 3vmin;
+}
+
+
+.carouselItem_img{
+    width:25vmin;
+    height:20vmin;
+    padding: 1vmin;
+    
+    
+}
+
+
+
+.carouselItem_txt{
+    font-size: 2.5vmin;
+    display: flex;
+    text-align: center;
+    padding: 1vmin;
+}
+

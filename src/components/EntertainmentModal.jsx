@@ -5,11 +5,9 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import axios from 'axios';
-import { img_500, unavailable, unavailableLandscape } from '../assets/config';
+import { img_500, unavailableLandscape } from '../assets/config';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import Carousel from './Carousel'
 import './EntertainmentModal.css'
@@ -24,7 +22,7 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: '90%',
-  height:'95%',
+  height:'auto',
   bgcolor: 'black',
   color:'white',
   border: '2px solid #000',
@@ -62,6 +60,7 @@ export default function EntertainmentModal({children, media_type, id}) {
   useEffect(() => {
     fetchData();
     fetchVideo();
+    // eslint-disable-next-line 
   }, [])
 
 
@@ -108,15 +107,17 @@ export default function EntertainmentModal({children, media_type, id}) {
 
                 </span>
                 <div>
-
+                  <Carousel
+                    media_type={media_type} id={id}
+                  />
                 </div>
-                <div className='entBtn pt-1'>
+                <div className='entBtn text-center pt-1'>
                 <Button
                   variant='outlined'
                   color='info'
                   startIcon={<YouTubeIcon />}
                   target='_blank'
-                  size='small'
+                  size='medium'
                   href={`https://www.youtube.com/watch?v=${video}`}
                 >
                   TRAILER
