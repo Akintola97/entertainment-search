@@ -84,9 +84,12 @@ export default function EntertainmentModal({children, media_type, id}) {
           <Box sx={style}>
            {content && (
            <div className='EntertainmentModal'>
+             <div className='EntertainmentModal-Img'>
               <img className = 'modalImg_landscape' alt = {content.name || content.title} src = {
                 content.backdrop_path ? `${img_500}/${content.backdrop_path}` : unavailableLandscape
               } />
+               
+              </div>
              
 
               <div className='entertainmentModal_about pt-2'>
@@ -102,7 +105,7 @@ export default function EntertainmentModal({children, media_type, id}) {
                 {content.tagline && (
                   <i className = 'tagline flex'>{content.tagline}</i>
                 )}
-                <span className='EntertainmentModal_description pt-3 flex w-2/4'>
+                <span className='EntertainmentModal_description pt-2 flex w-2/4'>
                   {content.overview}
 
                 </span>
@@ -111,8 +114,12 @@ export default function EntertainmentModal({children, media_type, id}) {
                     media_type={media_type} id={id}
                   />
                 </div>
-                <div className='entBtn text-center pt-1'>
-                <Button
+             
+              
+              </div>
+
+              <div className='entBtn text-center pt-1'>
+                <Button className='entertainmentModal-Btn'
                   variant='outlined'
                   color='info'
                   startIcon={<YouTubeIcon />}
@@ -123,10 +130,6 @@ export default function EntertainmentModal({children, media_type, id}) {
                   TRAILER
                 </Button>
                 </div>
-              
-              </div>
-
-
               
             </div>
             

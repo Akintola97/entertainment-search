@@ -1,16 +1,24 @@
+
+
+
 .modalImg_landscape{
     height:auto;
     width: auto;
 }
 
 @media(min-width:768px){
-
-
 .modalImg_landscape{
     height:15vmin;
     width: auto;
 }
 }
+@media(min-width:600px){
+.modalImg_landscape{
+    height:20vmin;
+    width: auto;
+}
+}
+
 
 .entertainmentModal_title{
     font-size: 2.5vmin;
@@ -24,7 +32,24 @@
     font-size: 2.5vmin;
 }
 
+@media(min-width:600px){
+    .EntertainmentModal_description{
+        height:auto;
+        width: auto;
+    }
+    }
+
+
 .entBtn{
    text-align: center;
    
 }
+@media(min-width:600px){
+.entBtn{
+   text-align: center;
+   
+   
+
+}
+}
+

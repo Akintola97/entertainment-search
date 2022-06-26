@@ -10,6 +10,14 @@
     
     
 }
+@media(min-width:600px){
+.carouselItem_img{
+    width:20vmin;
+    height:15vmin;
+    padding: 1vmin;
+    
+}
+}
 
 
 
