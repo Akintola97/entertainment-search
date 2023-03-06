@@ -8,7 +8,7 @@ import './Header.css'
 
 function header() {
   return (
-    <Link to = '/'>
+    <Link to = '/entertainment'>
     <div onClick={() => window.scroll(0,0)}  className='title'>Entertainment Center 🍿</div>
     </Link>
 
